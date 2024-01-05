@@ -15,7 +15,7 @@ if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "assistant", "content": "How can I help you?"}]
 for msg in st.session_state.messages:
     st.chat_message(msg["role"]).write(msg["content"])
-recorder = SQLiteChatRecorder('/home/romilly/git/active/streamlit_spikes/data/chats.db')
+recorder = SQLiteChatRecorder('../data/chats.db')
 client = OpenAI(api_key=api_key)
 model = "gpt-3.5-turbo"
 if prompt := st.chat_input(key='chat_input'):
