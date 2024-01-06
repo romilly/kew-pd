@@ -169,3 +169,4 @@ docs/_build/
 .pybuilder/
 target/
 /chat.db
+/src/prompts.db
