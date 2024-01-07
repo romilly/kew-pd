@@ -1,7 +1,7 @@
-# Knowledge Worker's Prompt Engineering Toolkit
+# Knowledge Engineer's Workbench for Python Developers
 
-A collection of tools designed for Knowledge Workers to improve
-their productivity through more effective prompting
+A collection of tools designed for Python to improve
+their productivity through the use
 of generative AI applications like ChatGPT and Mistral.
 
 
