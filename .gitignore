@@ -168,5 +168,5 @@ docs/_build/
 # PyBuilder
 .pybuilder/
 target/
-/chat.db
 /src/prompts.db
+/data/chats.db
