@@ -2,7 +2,7 @@
 
 ## Knowledge Engineer's Workbench for Python Developers
 
-A collection of tools designed for Python to improve
+A collection of tools designed for Python developers to improve
 their productivity through the use
 of generative AI applications like ChatGPT and Mistral.
 
