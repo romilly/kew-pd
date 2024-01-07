@@ -1,0 +1,1 @@
+This holds the chats.db SQLite database, but that is ignored by Git.
