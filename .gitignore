@@ -170,4 +170,4 @@ docs/_build/
 target/
 /src/prompts.db
 /data/chats.db
-/tests/.env
+**/.env
