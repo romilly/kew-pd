@@ -49,8 +49,9 @@ cp sample_dot_env .env
 nano .env
 ```
 
-Replace the API_KEY with your OpenAI key.
+In the nano editor, replace the API_KEY with your OpenAI key.
 If necessary, change the MODEL to the name of the OpenAI model that you wish to use.
+Save the .env file.
 
 ## Running the Automated Tests
 
