@@ -12,10 +12,11 @@ import os
 
 from pew.helpers.convert_chat_completion import serialize_chat_completion
 
-# Run chat with OpenAI and record prompts, respnses
-
-# load_dotenv()
-# api_key = os.environ["OPENAI_API_KEY"]
+# Run chat with OpenAI and record prompts, responses
+load_dotenv(os.path.join(os.getcwd(),'.env')) #neded because of the wat streamlit apps are run
+base_url = os.environ["BASE_URL"]
+api_key = os.environ["API_KEY"]
+model = os.environ["MODEL"]
 st.title("PEW")
 st.caption("Prompt Engineering Workbench")
 if "messages" not in st.session_state:
@@ -23,8 +24,7 @@ if "messages" not in st.session_state:
 for msg in st.session_state.messages:
     st.chat_message(msg["role"]).write(msg["content"])
 recorder = SQLiteChatRecordLibrary('../data/chats.db')
-model="nous-hermes-2-solar-10.7b"
-client = OpenAI(base_url="http://xavier:8000/v1", api_key="sk-xxx")
+client = OpenAI(base_url=base_url, api_key=api_key)
 if prompt := st.chat_input(key='chat_input'):
     st.session_state.messages.append({"role": "user", "content": prompt})
     st.chat_message("user").write(prompt)
@@ -32,6 +32,5 @@ if prompt := st.chat_input(key='chat_input'):
     msg = response.choices[0].message.content
     st.session_state.messages.append({"role": "assistant", "content": msg})
     st.chat_message("assistant").write(msg)
-    id = uuid4()
-    record = ChatRecord(id, datetime.now(), 'xavier', prompt, json.dumps(serialize_chat_completion(response)))
+    record = ChatRecord(uuid4(), datetime.now(), 'xavier', prompt, json.dumps(serialize_chat_completion(response)))
     recorder.add_record(record.id, record)
