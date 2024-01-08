@@ -171,3 +171,4 @@ target/
 /src/prompts.db
 /data/chats.db
 **/.env
+**/test.db

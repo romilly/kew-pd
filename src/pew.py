@@ -17,13 +17,14 @@ load_dotenv(os.path.join(os.getcwd(),'.env')) #neded because of the wat streamli
 base_url = os.environ["BASE_URL"]
 api_key = os.environ["API_KEY"]
 model = os.environ["MODEL"]
+chat_db = os.environ["CHAT_DATABASE"]
 st.title("PEW")
 st.caption("Prompt Engineering Workbench")
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "assistant", "content": "How can I help you?"}]
 for msg in st.session_state.messages:
     st.chat_message(msg["role"]).write(msg["content"])
-recorder = SQLiteChatRecordLibrary('../data/chats.db')
+recorder = SQLiteChatRecordLibrary(chat_db)
 client = OpenAI(base_url=base_url, api_key=api_key)
 if prompt := st.chat_input(key='chat_input'):
     st.session_state.messages.append({"role": "user", "content": prompt})
