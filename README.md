@@ -53,6 +53,16 @@ In the nano editor, replace the API_KEY with your OpenAI key.
 If necessary, change the MODEL to the name of the OpenAI model that you wish to use.
 Save the .env file.
 
+### Running the app
+
+In the src directory, type `streamlit run pew.py`
+
+The app should start, and a browser window should open. When you enter a prompt it will be submitted to OpanAI.
+
+![Screenshot](docs/image/pew-basic.png)
+
+
+
 ## Running the Automated Tests
 
 TBD
