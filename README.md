@@ -41,7 +41,7 @@ Here are the steps. A sample terminal session is shown below.
 cd where-you-want-the-app
 git clone https://github.com/romilly/kew-pd.git
 cd kew-pd
-4. python -m venv venv
+python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 cd src
